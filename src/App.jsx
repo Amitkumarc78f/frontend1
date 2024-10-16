@@ -1,0 +1,30 @@
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import SignUp from './pages/SignUp.jsx';
+import SignIn from './pages/SignIn.jsx';
+import ShowAllBookings from './pages/admin/ShowAllBookings.jsx';
+import AddNewCourt from './pages/admin/AddNewCourt.jsx';
+import UserBookings from './pages/user/UserBooking.jsx';
+import MyBookings from './pages/user/MyBookings.jsx';
+import Home from './pages/Home.jsx'
+import AdminDashboard from './pages/admin/Admindashboard.jsx';
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        {/* Common Routes */}
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/signin" element={<SignIn />} />
+
+        <Route path="/admin/dashboard" element={<AdminDashboard />} />
+        <Route path="/admin/showallbookings" element={<ShowAllBookings />} />
+        <Route path="/admin/addnewcourt" element={<AddNewCourt />} />
+
+        <Route path="/user/userbookings" element={<UserBookings/>} />
+        <Route path="/user/mybookings" element={<MyBookings/>} />
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;
